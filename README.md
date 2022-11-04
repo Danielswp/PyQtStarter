@@ -1,0 +1,2 @@
+# PyQtStarter
+PyQtStarter
