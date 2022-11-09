@@ -1,2 +1,3 @@
-cmd 
-ctrl+b
+cmd ctrl+b
+
+pyuic5 -o xxx.py xxx.ui
