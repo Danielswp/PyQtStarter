@@ -16,11 +16,21 @@ class MyHWidget(QWidget):
         main_layout.addWidget(btn_2)
         main_layout.addWidget(btn_3)
 
+        btn_1.installEventFilter(self)
+        self.installEventFilter(self)
+
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_A :
             print("Key A Press")
     def keyReleaseEvent(self, event):
         if event.key() == Qt.Key_A :
             print("Key A Release")
+
+    def eventFilter(self, obj, e):
+        print(obj)
+        print(e)
+        print(e.type())
+
+        return QObject.eventFilter(self, obj, e) 
 
 
