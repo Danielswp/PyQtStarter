@@ -1,8 +1,9 @@
 from PyQt5.QtWidgets import * 
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-
+from pyquery import PyQuery as pq
 import requests
+
 
 
 class MyHWidget(QWidget):
@@ -21,15 +22,21 @@ class MyHWidget(QWidget):
         self.btn_1.clicked.connect(self.getHttpProxyInfo)
 
     def getHttpProxyInfo(self):
-        #url = 'https://www.kuaidaili.com/free/'
-        #url = 'https://www.baidu.com'
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11'
-        }
-        url = 'https://www.jianshu.com/p/6b1f004ebd24?ivk_sa=1024320u'
-        #url = 'https://httpbin.org/get'
-        r = requests.get(url,headers=headers)
-        self.debugRequestsGet(r)
+        # url = 'https://www.kuaidaili.com/free/'
+        # headers = {
+        #     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11'
+        # }
+        # r = requests.get(url,headers=headers)
+        # #self.debugRequestsGet(r)
+        # proxyInfo = pq(r.text)
+        # for item in proxyInfo('tbody tr').items():
+        #     for col in item('td').items():
+        #         col_key = col.attr('data-title')
+        #         col_value = col.text()
+
+ 
+
+
 
     def debugRequestsGet(self, r):
         print(type(r))
